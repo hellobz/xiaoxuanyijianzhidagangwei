@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小旋一键找公司和岗位</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 730px;
+            background-color: #009688;
+        }
+
+        #wrap {
+            margin: 20px auto;
+            width: 700px;
+        }
+
+        h3,
+        h1 {
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 28px;
+            color: #00f;
+            letter-spacing: 4px;
+        }
+
+        h1 {
+            color: red;
+        }
+
+        .search_wrap {
+            display: flex;
+            align-items: center;
+            width: 700px;
+        }
+
+        .ipt_content {
+            margin-right: 20px;
+            width: 500px;
+            height: 55px;
+            padding-left: 20px;
+            border: 1px solid #eee;
+            box-sizing: border-box;
+            border-radius: 18px;
+            outline: none;
+            font-size: 24px;
+        }
+
+        .btn {
+            width: 180px;
+            height: 55px;
+            text-align: center;
+            line-height: 55px;
+            background-color: #4399FC;
+            color: #fff;
+            border-radius: 10px;
+            font-size: 18px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 700px) {
+
+            #wrap,
+            .search_wrap {
+                width: 500px;
+            }
+
+            .search_wrap {
+                display: block;
+            }
+
+            .ipt_content {
+                display: block;
+                width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .btn {
+                display: block;
+                margin-top: 40px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media (max-width: 530px) {
+
+            #wrap,
+            .search_wrap {
+                width: 300px;
+            }
+
+            .ipt_content {
+                display: block;
+                width: 210px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .btn {
+                display: block;
+                margin-top: 40px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <h1>强力建议请使用pc端进行访问</h1>
+        <h3>小旋一键找公司和岗位</h3>
+        <div class="search_wrap">
+            <input v-model="iptvalue" class="ipt_content" type="text" id="ipt">
+            <button @click="handleClick" class="btn">搜索</button>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios@0.24.0/dist/axios.min.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#wrap',
+            data: {
+                iptvalue: ''
+
+            },
+            methods: {
+
+                handleClick() {
+                    var companyone = window.open();
+
+                    var companytwo = window.open();
+
+                    var companythree = window.open();
+
+                    var companyfour = window.open();
+
+                    var companyfive = window.open();
+
+                    var companysix = window.open();
+
+                    var companyseven = window.open();
+
+                    if (companyone == null || companytwo == null || companythree == null || companyfour == null ||
+                        companyfive == null || companysix == null || companyseven == null
+                    ) {
+
+                        alert("您的浏览器启用弹出窗口过滤功能！\n\n请暂时先关闭此功能！");
+
+                    }
+                    companyone.location = 'https://www.zhipin.com/job_detail/?query=' + this.iptvalue;
+                    companytwo.location = 'https://search.51job.com/list/040000,000000,0000,00,9,99,' + this.iptvalue + ",2,1.html"
+                    companythree.location = 'https://www.lagou.com/wn/jobs?kd=' + this.iptvalue
+                    companyfour.location = 'https://changde.58.com/job/?key=' + this.iptvalue
+                    companyfive.location = 'https://sou.zhaopin.com/?jl=749&kw=' + this.iptvalue
+                    companysix.location = 'https://www.liepin.com/zhaopin/?key=' + this.iptvalue
+                    companyseven.location = 'https://changde.ganji.com/job?key=' + this.iptvalue
+                    // window.open("https://www.zhipin.com/job_detail/?query=" + this.iptvalue);
+
+                    // window.open("https://search.51job.com/list/040000,000000,0000,00,9,99," + this.iptvalue + ",2,1.html")
+
+                    // window.open("https://changde.58.com/job/?key=" + this.iptvalue)
+                    // window.open("https://sou.zhaopin.com/?jl=749&kw=" + this.iptvalue)
+                    // window.open("https://www.liepin.com/zhaopin/?key=" + this.iptvalue)
+                    // window.open("https://changde.ganji.com/job?key=" + this.iptvalue)
+                    // window.open("https://www.lagou.com/wn/jobs?kd=" + this.iptvalue)
+                    // window.location.href ="https://www.baidu.com/s?wd="+this.iptvalue;
+
+                    // axios.get(`https://www.baidu.com/s?wd=${this.iptvalue}`)
+                    // .then((res)=>{
+                    //     console.log(res);
+                    //     window.location.href ="https://www.baidu.com/s?wd="+this.iptvalue;
+                    // }).catch(()=>{
+
+                    // })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
